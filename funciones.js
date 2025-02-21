@@ -17,7 +17,7 @@ $(document).ready(function(){
             
 
           if(response.message && response.message.indexOf("Login exitoso") !== -1){
-            window.location.href = "principal.html";
+            alert("Login")
           } else {
             alert("Credenciales incorrectas, intenta de nuevo");
           }
