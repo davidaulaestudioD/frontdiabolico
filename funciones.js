@@ -6,9 +6,8 @@ $(document).ready(function(){
       var contraseña = $("#contraseña").val().trim();
       
       
-      // Enviamos los datos al backend usando $.ajax (método GET en este ejemplo)
       $.ajax({
-        url: "https://ejercicio-git-restaurante-back.vercel.app/api/users",
+        url: "http://localhost:3000/api/login",
         method: "GET", 
         data: { usuario: usuario, contraseña: contraseña },
         dataType: "json",
@@ -31,5 +30,59 @@ $(document).ready(function(){
         }
       });
     });
+    $(".boton-registro").click(function(e){
+      e.preventDefault();
+      
+      var usuarioNuevo = $("#usuarioNuevo").val()
+      var contraseñaNueva = $("#contraseñaNueva").val()
+      var contraseñaNuevaConfirmar = $("#contraseñaNuevaConfirmada").val()
+    if(usuarioNuevo){
+      if(contraseñaNueva && contraseñaNueva==contraseñaNuevaConfirmar){
+        $.ajax({
+          url: "http://localhost:3000/api/registro",
+          type: "POST",
+          contentType: "application/json", 
+          data: JSON.stringify({ 
+            usuario: usuarioNuevo,
+            contraseña: contraseñaNueva,
+            tipo:"normal"
+          }),
+          dataType: "json",
+          success: function(response) {
+              console.log(response);
+              location.replace("index.html")
+          },
+          error: function(xhr) {
+            if (xhr.responseJSON && xhr.responseJSON.error) {
+              alert( xhr.responseJSON.error);
+            } else {
+              alert("Error al iniciar sesión");
+            }
+          }
+        });
+      }
+      else{
+        alert(!usuarioNuevo)
+        $("#usuarioNuevo").val("")
+        $("#contraseñaNuevaConfirmada").val("")
+        $("#contraseñaNueva").val("")
+  
+      }
+    }
+    else{
+      alert(!usuario)
+      $("#usuarioNuevo").val("")
+      $("#contraseñaNuevaConfirmada").val("")
+      $("#contraseñaNueva").val("")
+
+    }
+    });
+
+    $('.registrarme').on('click',function(){
+      location.replace('registro.html')
+    })
+    $('.logear').on('click',function(){
+      location.replace('index.html')
+    })
 });
   

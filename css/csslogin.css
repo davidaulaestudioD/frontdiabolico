@@ -2,7 +2,7 @@
 
 body {
   font-family: "Francois One", serif;
-  background: url("fondologin.jpg") no-repeat center center;
+  background: url("./img/fondologin.jpg") no-repeat center center;
   background-size: cover;
   color: #333;
   height: 100vh;
