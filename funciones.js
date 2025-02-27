@@ -43,8 +43,8 @@ $(document).ready(function(){
           type: "POST",
           contentType: "application/json", 
           data: JSON.stringify({ 
-            usuario: usuarioNuevo,
-            contraseña: contraseñaNueva,
+            nombre: usuarioNuevo,
+            password: contraseñaNueva,
             tipo:"normal"
           }),
           dataType: "json",
