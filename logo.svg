@@ -1,0 +1,9 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<!--Semicírculo simulando un bowl rojo-->
+  <path d="M 30 60 A 30 30 0 0 0 90 60" fill="#f44336" stroke="#f44336" stroke-width="10"/>
+<!--Montañita verde (verdura)-->
+  <path d="M 35 60 Q 60 20, 85 60 Z" fill="#4CAF50"/>
+<!--Líneas que simulan palillos-->
+  <line x1="60" y1="45" x2="80" y2="10" stroke="#333" stroke-width="3"/>
+  <line x1="55" y1="45" x2="90" y2="15" stroke="#333" stroke-width="3"/>
+</svg>
