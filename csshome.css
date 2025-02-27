@@ -48,9 +48,13 @@ font-size: 24px;
 .logo-name img {
     width: 45%;
 }
-
-.logout {
-    width: 3%;
+.logout{
+    display: flex;
+    justify-content: end;
+    width: 12%;
+}
+.logout img{
+    width: 25%;
 }
 
 
