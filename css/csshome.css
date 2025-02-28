@@ -63,7 +63,7 @@ font-size: 24px;
 position: relative;
 width: 100%;
 height: 70vh; /* Ajusta la altura a tu gusto */
-background: url("hero.jpg") no-repeat center center;
+background: url("img/hero.jpg") no-repeat center center;
 background-size: cover;
 display: flex;
 align-items: center;
@@ -115,7 +115,7 @@ color: #333;
     display: flex;
     width: 100%;
     height: 40vh;
-    background: url("fondofondo.jpg");
+    background: url("img/fondofondo.jpg");
     align-items: center;
     justify-content: center;
     gap: 5%;
@@ -124,7 +124,7 @@ color: #333;
 }
 
 .image-pedidos {
-    background: url("pedidos.jpg") no-repeat center center;
+    background: url("img/pedidos.jpg") no-repeat center center;
     background-size: cover;
     width: 20%;
     height: 90%;
@@ -142,7 +142,7 @@ color: #333;
 
 
 .image-mesas {
-    background: url("mesas.jpg") no-repeat center center;
+    background: url("img/mesas.jpg") no-repeat center center;
     background-size: cover;
     width: 20%;
     height: 90%;
