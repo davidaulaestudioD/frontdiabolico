@@ -19,7 +19,7 @@ $(document).ready(function(){
         if(response.message && response.message.indexOf("Login exitoso") !== -1){
           location.replace("home.html");
         } else {
-          location.reload();     
+          location.reload();
         }
       },
       error: function(xhr) {
@@ -100,4 +100,4 @@ $(document).ready(function(){
     location.replace("index.html");
   });
 
-})
+});
