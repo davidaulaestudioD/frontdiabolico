@@ -131,7 +131,7 @@ $(document).ready(function() {
   if (userTipo === "admin") {
     // Vista de administrador: se oculta el panel derecho y se cargan los pedidos
     $(".derecha").hide();
-    
+    //log prrrr
     $.ajax({
       url: "http://localhost:3000/api/pedidos",
       type: "GET",
