@@ -44,8 +44,59 @@ $(document).ready(function(){
     location.replace("home.html");
   });
 
-  $(".logout").click(function(e){
+  $(".boton-registro").click(function (e) {
+    e.preventDefault();
+
+    var usuarioNuevo = $("#usuarioNuevo").val();
+    var contraseñaNueva = $("#contraseñaNueva").val();
+    var contraseñaNuevaConfirmar = $("#contraseñaNuevaConfirmada").val();
+    if (usuarioNuevo) {
+      if (contraseñaNueva && contraseñaNueva == contraseñaNuevaConfirmar) {
+        $.ajax({
+          url: "http://localhost:3000/api/registro",
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify({
+            nombre: usuarioNuevo,
+            password: contraseñaNueva,
+            tipo: "normal",
+          }),
+          dataType: "json",
+          success: function (response) {
+            console.log(response);
+            location.replace("index.html");
+          },
+          error: function (xhr) {
+            if (xhr.responseJSON && xhr.responseJSON.error) {
+              alert(xhr.responseJSON.error);
+            } else {
+              alert("Error al iniciar sesión");
+            }
+          },
+        });
+      } else {
+        alert(!usuarioNuevo);
+        $("#usuarioNuevo").val("");
+        $("#contraseñaNuevaConfirmada").val("");
+        $("#contraseñaNueva").val("");
+      }
+    } else {
+      alert(!usuario);
+      $("#usuarioNuevo").val("");
+      $("#contraseñaNuevaConfirmada").val("");
+      $("#contraseñaNueva").val("");
+    }
+  });
+
+  $(".registrarme").on("click", function () {
+    location.replace("registro.html");
+  });
+  $(".logear").on("click", function () {
     location.replace("index.html");
+  });
+  
+  $(".logout").click(function(e){
+  location.replace("index.html");
   });
 
 
