@@ -1,8 +1,45 @@
 $(document).ready(function() {
   var currentMesa = null; // Almacena la mesa que se está reservando
 
-  // Al hacer clic en "Reservar" en cualquier mesa, mostramos el modal.
-  $('.reservar-btn').click(function() {
+  var userTipo = localStorage.getItem("tipo");
+  if(userTipo !== "admin") {
+    $(".divAsignadas").hide();
+  } else {
+    $(".divAsignadas").show();
+  }
+
+  // Cargar las mesas desde la API
+  $.ajax({
+    url: "http://localhost:3000/api/mesas",
+    type: "GET",
+    dataType: "json",
+    success: function(response) {
+      $('.divMesas').empty();
+      // Por cada mesa recibida se crea una tarjeta
+      response.forEach(function(mesa) {
+        // Si el estado es "Libre", se muestra el botón de reservar; si no, se deshabilita
+        var reservaBtn = '';
+        if (mesa.estado === "Libre") {
+          reservaBtn = '<button class="reservar-btn">Reservar</button>';
+        } else {
+          reservaBtn = '<button class="reservar-btn" disabled>Reservada</button>';
+        }
+        var mesaDiv = '<div class="mesa">' +
+                        '<h3>' + mesa.nombreMesa + '</h3>' +
+                        '<p>Estado: ' + mesa.estado + '</p>' +
+                        reservaBtn +
+                      '</div>';
+        $('.divMesas').append(mesaDiv);
+      });
+      actualizarResumen();
+    },
+    error: function(err) {
+      console.error("Error al cargar mesas", err);
+    }
+  });
+
+  // Delegación de eventos para el botón "Reservar" (elementos cargados dinámicamente)
+  $(document).on('click', '.reservar-btn', function() {
     currentMesa = $(this).closest('.mesa');
     $('#reservationName').val(''); // Limpiar el campo de entrada
     $('#reservationModal').fadeIn();
@@ -13,7 +50,7 @@ $(document).ready(function() {
     $('#reservationModal').fadeOut();
   });
 
-  // Si se pulsa fuera del contenido del modal, se cierra el modal.
+  // Cerrar el modal si se hace clic fuera del contenido
   $(window).click(function(event) {
     if ($(event.target).is('#reservationModal')) {
       $('#reservationModal').fadeOut();
@@ -23,26 +60,37 @@ $(document).ready(function() {
   // Al confirmar la reserva en el modal
   $('#confirmReservation').click(function() {
     var name = $('#reservationName').val().trim();
-    if(name === '') {
+    if (name === '') {
       alert("Por favor, introduce un nombre para la reserva.");
       return;
     }
     
-    // Actualizar el estado de la mesa a "Ocupada"
-    currentMesa.find('p').text("Estado: Ocupada");
-    // Deshabilitar el botón para evitar nuevas reservas en la misma mesa
-    currentMesa.find('.reservar-btn').prop('disabled', true).text("Reservada");
+    // Obtener el nombre de la mesa (del <h3>)
+    var mesaName = currentMesa.find('h3').text();
     
-    // Obtener el número de la mesa (del <h3>)
-    var mesaNumber = currentMesa.find('h3').text();
-    // Agregar la reserva al listado de asignaciones
-    $('.divAsignadas').append('<p>' + mesaNumber + ' - ' + name + '</p>');
-    
-    // Actualizar los contadores de mesas libres y ocupadas
-    actualizarResumen();
-    
-    // Cerrar el modal
-    $('#reservationModal').fadeOut();
+    // Enviar la reserva al back para actualizar el estado de la mesa
+    $.ajax({
+      url: "http://localhost:3000/api/mesas/reservar",
+      type: "PUT",
+      contentType: "application/json",
+      data: JSON.stringify({
+        nombreMesa: mesaName,
+        nombreReserva: name
+      }),
+      success: function(data) {
+        // Actualizar la UI: cambiar el estado visual a "Ocupada" y deshabilitar el botón
+        currentMesa.find('p').text("Estado: Ocupada");
+        currentMesa.find('.reservar-btn').prop('disabled', true).text("Reservada");
+        // Agregar la reserva al listado de asignaciones
+        $('.divAsignadas').append('<p>' + mesaName + ' - ' + name + '</p>');
+        actualizarResumen();
+        $('#reservationModal').fadeOut();
+      },
+      error: function(err) {
+        alert("Error reservando la mesa, intente nuevamente.");
+        console.error("Error en la reserva:", err);
+      }
+    });
   });
 
   // Función para actualizar el resumen de mesas
@@ -56,11 +104,12 @@ $(document).ready(function() {
     $('.divResumen').html('<p>Mesas Libres: ' + libres + '</p><p>Mesas Ocupadas: ' + ocupadas + '</p>');
   }
 
-  $(".logo-name").click(function(e){
+  // Redirigir a home al hacer clic en el logo
+  $(".logo-name").click(function(){
     location.replace("home.html");
   });
 
-
-
+  $(".logout").click(function(e){
+    location.replace("index.html");
+  });
 });
-  
