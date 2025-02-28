@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="css/csspedidos.css">
+    <link rel="icon" type="image/x-icon" href="logo.svg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+
+        <div class="logo-name">
+            <img src="css/img/logo.svg" alt="Logo">
+            <span>ComeCome</span>
+        </div>
+    
+        <!-- Menú en el centro -->
+        <nav>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Reservar Mesa</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+    
+        <div class="logout">
+          <img src="css/img/logout.png" alt="Salir" >
+        </div>
+    </header>
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+    <div class="hero-content">
+      <div class="divPlatos">
+        <div class="plato">
+          <h3>Sushi Roll</h3>
+          <p>Precio: 8.50€</p>
+          <button>Añadir</button>
+        </div>
+        <div class="plato">
+          <h3>Ramen Especial</h3>
+          <p>Precio: 9.00€</p>
+          <button>Añadir</button>
+        </div>
+        <div class="plato">
+          <h3>Tempura Mixta</h3>
+          <p>Precio: 7.50€</p>
+          <button>Añadir</button>
+        </div>
+        <div class="plato">
+          <h3>Yakitori</h3>
+          <p>Precio: 6.00€</p>
+          <button>Añadir</button>
+        </div>
+        <div class="plato">
+          <h3>Gyoza</h3>
+          <p>Precio: 5.50€</p>
+          <button>Añadir</button>
+        </div>
+        <div class="plato">
+          <h3>Sashimi Deluxe</h3>
+          <p>Precio: 12.00€</p>
+          <button>Añadir</button>
+        </div>
+        <div class="plato">
+          <h3>Bento Box</h3>
+          <p>Precio: 10.00€</p>
+          <button>Añadir</button>
+        </div>
+      </div>
+
+      <div class="derecha">
+        <div class="divTotal">
+          <p>Total a Pagar:</p>
+          <p id="totalAmount">0.00€</p>
+          <button class="boton-pagar">Pagar</button>
+          <button class="boton-limpiar">Limpiar Pedido</button>
+        </div>
+  
+        <div class="divSeleccionados">
+          
+        </div>
+      </div>
+
+    </div>
+    </section>
+
+
+
+    <script src="pedidos.js"></script>
+</body>
+</html>
+
+
+
+
