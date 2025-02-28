@@ -95,10 +95,12 @@ nav ul li a:hover {
 /* ===== SECCIÓN DE MESAS ===== */
 .divMesas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
   max-width: 60%;
+  max-height: 70vh; /* Limita la altura para permitir el scroll */
+  overflow-y: auto; /* Permite el desplazamiento vertical */
   background-color: #ffffff81;
   border: 2px solid gray;
   border-radius: 20px;
@@ -112,7 +114,7 @@ nav ul li a:hover {
   padding: 15px;
   display: flex;
   flex-direction: column;
-  height: 70%;
+  height: 20vh;
   align-items: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -168,7 +170,7 @@ nav ul li a:hover {
 }
 
 .divResumen p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 5px 0;
   color: #333;
 }
@@ -180,7 +182,7 @@ nav ul li a:hover {
 
 .divAsignadas p {
   margin: 5px 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333;
 }
 
@@ -257,21 +259,30 @@ nav ul li a:hover {
     color: #000;
   }
 
-  @media (min-width:931px) and (max-width:1300px){
+  @media (min-width:960px) and (max-width:1300px){
     .divMesas {
       display: grid;
-      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       padding: 20px;
-      max-width: 100%;
+      width: 100%;
+      max-height: 70vh; /* Limita la altura para permitir el scroll */
+      overflow-y: auto; /* Permite el desplazamiento vertical */
       background-color: #ffffff81;
       border: 2px solid gray;
       border-radius: 20px;
       align-items: center;
     }
+    .mesa{
+      height: 20vh;
+    }
   }
-@media (min-width:680px) and (max-width:930px){
+@media (min-width:680px) and (max-width:960px){
   .divResumen{
+    width: 50%;
+    margin: auto;
+  }
+  .divAsignadas{
     width: 50%;
     margin: auto;
   }
@@ -314,21 +325,31 @@ nav ul li a:hover {
 }
 /* ===== SECCIÓN DE MESAS ===== */
 .divMesas {
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(2,1fr );
   gap: 20px;
   padding: 20px;
-  max-width: 100%;
+  width: 100%;
+  max-height: 70vh; /* Limita la altura para permitir el scroll */
+  overflow-y: auto; /* Permite el desplazamiento vertical */
   background-color: #ffffff81;
   border: 2px solid gray;
   border-radius: 20px;
   align-items: center;
+}
+.mesa{
+  height: 20vh;
 }
 }
 
 
 
 @media (max-width:680px){
+  .divAsignadas{
+    width: 50%;
+    margin: auto;
+  }
   .divResumen{
     width: 50%;
     margin: auto;
@@ -367,29 +388,40 @@ nav ul li a:hover {
   }
   /* ===== SECCIÓN DE MESAS ===== */
   .divMesas {
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-columns: repeat(2,1fr );
     gap: 20px;
     padding: 20px;
-    max-width: 100%;
+    width: 100%;
+    max-height: 70vh; /* Limita la altura para permitir el scroll */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
     background-color: #ffffff81;
     border: 2px solid gray;
     border-radius: 20px;
     align-items: center;
   }
+  .mesa{
+    height: 20vh;
+  }
+  
 }
-@media (max-width:450px){
+@media (max-width:520px){
   .divMesas {
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    grid-template-columns: repeat(1,1fr );
     gap: 20px;
     padding: 20px;
-    max-width: 100%;
+    width: 100%;
+    max-height: 70vh; /* Limita la altura para permitir el scroll */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
     background-color: #ffffff81;
     border: 2px solid gray;
     border-radius: 20px;
     align-items: center;
   }
+  
 }
   .borrar-reserva {
     background-color: #f44336;

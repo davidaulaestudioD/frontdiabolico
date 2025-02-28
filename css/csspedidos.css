@@ -98,17 +98,18 @@ background: rgba(0, 0, 0, 0.3);
 
 /* ===== SECCIÓN DE PLATOS (OPCIÓN CON CSS GRID) ===== */
 .divPlatos {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-gap: 20px;
-padding: 20px;
-max-width: 60%;
-background-color: #ffffff81;
-border: 2px solid gray;
-border-radius: 20px;
-align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 60%;
+  max-height: 70vh; /* Altura máxima para permitir el scroll */
+  overflow-y: auto; /* Permite el desplazamiento vertical */
+  background-color: #ffffff81;
+  border: 2px solid gray;
+  border-radius: 20px;
+  align-items: center;
 }
-
 .plato {
 background-color: #f5f5f5;
 border: 1px solid #ccc;
@@ -197,7 +198,7 @@ background-color: #d32f2f;
 
 /* ===== ESTILO PARA LA LISTA DE PLATOS AÑADIDOS ===== */
 .divSeleccionados {
-max-height: 59%; /* Limita la altura y permite scroll si hay muchos elementos */
+max-height: 40%; /* Limita la altura y permite scroll si hay muchos elementos */
 overflow-y: auto;
 background-color: #ffffffd2;
 border: 2px solid gray;
@@ -286,49 +287,159 @@ color: #333;
   }
 
   .pedido-card {
-    background-color: #fff;
-    color: #333;
-    border: 2px solid gray;
+    display: grid;
+    grid-template-areas:
+        "nombre telefono"
+        "direccion total"
+        "fecha fecha"
+        "items items";
+        color: black; 
+    gap: 10px; /* Espaciado entre elementos */
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
     border-radius: 20px;
-    padding: 20px;
-    margin: 10px;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .pedido-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-  }
-  
-  .pedido-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .pedido-card p {
-    font-size: 1.2rem;
-    margin: 5px 0;
-  }
-  
-  .pedido-card ul {
-    list-style: disc;
-    margin-left: 20px;
-  }
-  
-  .pedido-card button {
+}
+
+.pedido-nombre { grid-area: nombre; font-weight: bold; }
+.pedido-telefono { grid-area: telefono; }
+.pedido-direccion { grid-area: direccion; }
+.pedido-fecha { grid-area: fecha; font-style: italic; }
+.pedido-total { grid-area: total; font-weight: bold; color: #f44336; }
+.pedido-items {grid-area: items;}
+.pedido-items ul{
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.pedido-items ul li{
+  width: 100%;
+}
+.delete-pedido-btn { 
+    grid-column: span 2; 
     background-color: #f44336;
-    color: #fff;
+    color: white;
     border: none;
+    padding: 10px;
     border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 10px;
-  }
-  
-  .pedido-card button:hover {
+}
+
+.delete-pedido-btn:hover {
     background-color: #d32f2f;
+}
+
+  
+  @media (min-width:931px) and (max-width:1300px){
+    .hero-content{
+      gap: 20px;
+    }
+    .divPlatos {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 60%;
+      max-height: 70vh; /* Altura máxima para permitir el scroll */
+      overflow-y: auto; /* Permite el desplazamiento vertical */
+      background-color: #ffffff81;
+      border: 2px solid gray;
+      border-radius: 20px;
+      align-items: center;
+  }
+  }
+
+  @media(max-width:931px){
+     nav{
+    display: none;
+  }
+  .hero-content{
+    gap: 20px;
+  }
+  .hero-content{
+    width: 80%;
+    justify-content: space-between;
+  }
+  .divPlatos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 60%;
+    max-height: 70vh; /* Altura máxima para permitir el scroll */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    background-color: #ffffff81;
+    border: 2px solid gray;
+    border-radius: 20px;
+    align-items: center;
+}
+  }
+  @media (max-width:749px){
+    nav{
+        display: none;
+    }
+    .logo-name span {
+        font-size: 15px;
+        margin: 0;
+    }
+    .logout img{
+      width: 100%;
+    }
+    .divPlatos {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+      max-height: 70vh; /* Altura máxima para permitir el scroll */
+      overflow-y: auto; /* Permite el desplazamiento vertical */
+      background-color: #ffffff81;
+      border: 2px solid gray;
+      border-radius: 20px;
+      align-items: center;
+  }
+    .divPlatos .plato{
+      margin: auto;
+      width: 45%;
+      height: 27vh;
+    }
+    .divTotal,.divSeleccionados{
+      width: 90%;
+    }
+  }
+  @media (max-width:430px){
+    nav{
+        display: none;
+    }
+    .logo-name span {
+        font-size: 15px;
+        margin: 0;
+    }
+    .logout img{
+      width: 100%;
+    }
+    .divPlatos {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+      max-height: 70vh; /* Altura máxima para permitir el scroll */
+      overflow-y: auto; /* Permite el desplazamiento vertical */
+      background-color: #ffffff81;
+      border: 2px solid gray;
+      border-radius: 20px;
+      align-items: center;
+  }
+    .divPlatos .plato{
+      margin: 0;
+      width: 60%;
+      height: 27vh;
+    }
+    .divTotal,.divSeleccionados{
+      width: 90%;
+    }
   }

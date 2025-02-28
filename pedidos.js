@@ -7,7 +7,7 @@
 
 //   // Cargar los platos desde la API
 //   $.ajax({
-//     url: "http://localhost:3000/api/platos",
+//     url: "https://ejercicio-git-restaurante-back.vercel.app/api/platos",
 //     type: "GET",
 //     dataType: "json",
 //     success: function(response) {
@@ -82,7 +82,7 @@
 //     };
     
 //     $.ajax({
-//       url: "http://localhost:3000/api/pedidos",
+//       url: "https://ejercicio-git-restaurante-back.vercel.app/api/pedidos",
 //       type: "POST",
 //       contentType: "application/json",
 //       data: JSON.stringify(orderData),
@@ -133,27 +133,28 @@ $(document).ready(function() {
     $(".derecha").hide();
     //log prrrr
     $.ajax({
-      url: "http://localhost:3000/api/pedidos",
+      url: "https://ejercicio-git-restaurante-back.vercel.app/api/pedidos",
       type: "GET",
       dataType: "json",
       success: function(response) {
         $('.divPlatos').empty();
         response.forEach(order => {
-          const fechaStr = order.fecha ? `<p>Fecha: ${new Date(order.fecha).toLocaleString()}</p>` : '';
+          const fechaStr = order.fecha ? `<p class="pedido-fecha">Fecha: ${new Date(order.fecha).toLocaleString()}</p>` : '';
           const itemsList = (order.items && order.items.length > 0)
             ? `<p>Items:</p><ul>${order.items.map(item => `<li>${item.nombrePlato} - ${parseFloat(item.precio).toFixed(2)}€</li>`).join('')}</ul>`
             : '';
           const orderCard = `
             <div class="pedido-card" data-id="${order._id}">
-              <h3>Pedido de: ${order.nombreCliente}</h3>
-              <p>Teléfono: ${order.telefono}</p>
-              <p>Dirección: ${order.direccion}</p>
-              <p>Total: ${order.total}€</p>
+              <h3 class="pedido-nombre">Pedido de: ${order.nombreCliente}</h3>
+              <p class="pedido-telefono">Teléfono: ${order.telefono}</p>
+              <p class="pedido-direccion">Dirección: ${order.direccion}</p>
               ${fechaStr}
-              ${itemsList}
+              <p class="pedido-total">Total: ${order.total}€</p>
+              ${itemsList ? `<div class="pedido-items">${itemsList}</div>` : ''}
               <button class="delete-pedido-btn" data-id="${order._id}">Eliminar Pedido</button>
             </div>
           `;
+
           $('.divPlatos').append(orderCard);
         });
       },
@@ -166,7 +167,7 @@ $(document).ready(function() {
     $(document).on('click', '.delete-pedido-btn', function() {
       const pedidoId = $(this).data("id");
       $.ajax({
-        url: `http://localhost:3000/api/pedidos/${pedidoId}`,
+        url: `https://ejercicio-git-restaurante-back.vercel.app/api/pedidos/${pedidoId}`,
         type: "DELETE",
         success: function() {
           $(`.pedido-card[data-id="${pedidoId}"]`).remove();
@@ -187,7 +188,7 @@ $(document).ready(function() {
     
     // Cargar los platos desde la API
     $.ajax({
-      url: "http://localhost:3000/api/platos",
+      url: "https://ejercicio-git-restaurante-back.vercel.app/api/platos",
       type: "GET",
       dataType: "json",
       success: function(response) {
@@ -263,7 +264,7 @@ $(document).ready(function() {
       };
       
       $.ajax({
-        url: "http://localhost:3000/api/pedidos",
+        url: "https://ejercicio-git-restaurante-back.vercel.app/api/pedidos",
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify(orderData),
