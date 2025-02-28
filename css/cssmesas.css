@@ -168,7 +168,7 @@ nav ul li a:hover {
 }
 
 .divResumen p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 5px 0;
   color: #333;
 }
@@ -180,7 +180,7 @@ nav ul li a:hover {
 
 .divAsignadas p {
   margin: 5px 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333;
 }
 
@@ -275,6 +275,10 @@ nav ul li a:hover {
     width: 50%;
     margin: auto;
   }
+  .divAsignadas{
+    width: 50%;
+    margin: auto;
+  }
   header {
       display: flex;
       align-items: center;
@@ -329,6 +333,10 @@ nav ul li a:hover {
 
 
 @media (max-width:680px){
+  .divAsignadas{
+    width: 50%;
+    margin: auto;
+  }
   .divResumen{
     width: 50%;
     margin: auto;

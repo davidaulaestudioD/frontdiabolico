@@ -197,7 +197,7 @@ background-color: #d32f2f;
 
 /* ===== ESTILO PARA LA LISTA DE PLATOS AÑADIDOS ===== */
 .divSeleccionados {
-max-height: 59%; /* Limita la altura y permite scroll si hay muchos elementos */
+max-height: 40%; /* Limita la altura y permite scroll si hay muchos elementos */
 overflow-y: auto;
 background-color: #ffffffd2;
 border: 2px solid gray;
@@ -283,4 +283,79 @@ color: #333;
   .modal-content .close-order:hover,
   .modal-content .close-order:focus {
     color: #000;
+  }
+
+  
+  @media (min-width:931px) and (max-width:1300px){
+    .hero-content{
+      gap: 20px;
+    }
+    .divPlatos{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 60%;
+      background-color: #ffffff81;
+      border: 2px solid gray;
+      border-radius: 20px;
+      align-items: center;
+      height: 110vh;
+    }
+  }
+
+  @media(max-width:931px){
+     nav{
+    display: none;
+  }
+  .hero-content{
+    gap: 20px;
+  }
+  .hero-content{
+    width: 80%;
+    justify-content: space-between;
+  }
+  .divPlatos{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 60%;
+    background-color: #ffffff81;
+    border: 2px solid gray;
+    border-radius: 20px;
+    align-items: center;
+    height: 150vh;
+  }
+  }
+  @media (max-width:484px){
+    nav{
+        display: none;
+    }
+    .logo-name span {
+        font-size: 15px;
+        margin: 0;
+    }
+    .logout img{
+      width: 100%;
+    }
+    .divPlatos{
+      display: grid;
+      grid-template-columns: repeat(1, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 40%;
+      background-color: #ffffff81;
+      border: 2px solid gray;
+      border-radius: 20px;
+      align-items: center;
+      height: 110vh;
+    }
+    .divPlatos .plato{
+      width: 50%;
+      height: 27vh;
+    }
+    .divTotal,.divSeleccionados{
+      width: 50%;
+    }
   }
