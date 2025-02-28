@@ -12,13 +12,11 @@ $(document).ready(function(){
         data: { usuario: usuario, contraseña: contraseña },
         dataType: "json",
         success: function(response) {
-            console.log(response);
-            
 
           if(response.message && response.message.indexOf("Login exitoso") !== -1){
-            alert("Login")
+            location.replace('home.html')
           } else {
-            alert("Credenciales incorrectas, intenta de nuevo");
+           location.reload()
           }
         },
         error: function(xhr) {
