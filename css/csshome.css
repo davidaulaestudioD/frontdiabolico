@@ -168,3 +168,64 @@ color: #333;
 }
 
 
+@media (min-width:481px) and (max-width:930px){
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 5px 10px;
+        background: rgba(255, 255, 255, 0.74);
+    }
+    .hero-content h1{
+        width: 80%;
+        margin: auto;
+    }
+    .logout img{
+        width: 100%;
+    }
+    nav ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        }
+    nav ul li a{
+        font-size: 15px;
+    }
+    .logo-name span {
+        font-size: 15px;
+        margin: 0;
+    }
+    .image-pedidos,.image-mesas{
+        width: 30%; 
+    }
+
+}
+
+
+
+@media (max-width:480px){
+    nav{
+        display: none;
+    }
+    .logo-name span {
+        font-size: 15px;
+        margin: 0;
+    }
+    .image-pedidos,.image-mesas{
+        width: 42%; 
+    }
+    .hero-content h1{
+        font-size: 28px;
+        width: 80%;
+        margin: auto;
+    }
+    .hero-content p{
+        font-size: 14px;
+        width: 80%;
+        margin: auto;
+    }
+    .logout img{
+        width: 100%;
+    }
+}
