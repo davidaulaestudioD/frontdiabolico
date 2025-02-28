@@ -31,7 +31,7 @@ $(document).ready(function(){
         }
       }
     });
-});
+  });
   $(".boton-registro").click(function(e){
     e.preventDefault();
 
@@ -78,14 +78,14 @@ $(document).ready(function(){
     $("#contraseñaNueva").val("")
 
   }
-  $('.registrarme').on('click',function(){
-    location.replace('registro.html')
-  })
-  $('.logear').on('click',function(){
-    location.replace('index.html')
-  })
-  $('.logout').on('click',function(){
-    location.replace("index.html")
-  })
+    })
+    $('.registrarme').on('click',function(){
+      location.replace('registro.html')
+    })
+    $('.logear').on('click',function(){
+      location.replace('index.html')
+    })
+    $('.logout').on('click',function(){
+      location.replace("index.html")
     })
 })
