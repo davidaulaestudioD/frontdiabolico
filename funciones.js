@@ -32,6 +32,7 @@ $(document).ready(function(){
     });
   });
   
+
   $(".image-pedidos").click(function(e){
     location.replace("pedidos.html");
   });
@@ -43,6 +44,7 @@ $(document).ready(function(){
   $(".logo-name").click(function(e){
     location.replace("home.html");
   });
+  
   
   $(".boton-registro").click(function (e) {
     e.preventDefault();
