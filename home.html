@@ -52,6 +52,18 @@
       <footer>
         <p>© 2025 - Todos los derechos reservados - David y Samuel</p>
       </footer>
+      <form id="reservaForm">
+        <label for="nombreReserva">Nombre de la reserva:</label>
+        <input type="text" id="nombreReserva" name="nombreReserva" required>
+    
+        <label for="numComensales">Número de comensales:</label>
+        <input type="number" id="numComensales" name="numComensales" min="1" required>
+    
+        <label for="fechaReserva">Selecciona fecha y hora:</label>
+        <input type="datetime-local" id="fechaReserva" name="fechaReserva" required>
+    
+        <button type="submit">Guardar Reserva</button>
+    </form>
     
 
 

@@ -84,5 +84,40 @@ $(document).ready(function(){
     $('.logear').on('click',function(){
       location.replace('index.html')
     })
+    $('.logout').on('click',function(){
+      location.replace("index.html")
+    })
+    $("#reservaForm").submit(function(event) {
+      event.preventDefault();
+  
+      const nombreReserva = $("#nombreReserva").val();
+      const numComensales = $("#numComensales").val();
+      const fechaSeleccionada = $("#fechaReserva").val();
+  
+      if (!nombreReserva || !numComensales || !fechaSeleccionada) {
+          alert("Por favor, complete todos los campos.");
+          return;
+      }
+  
+      const reservaData = {
+          nombreReserva: nombreReserva,
+          numComensales: parseInt(numComensales),
+          horaReserva: fechaSeleccionada
+      };
+  
+      $.ajax({
+          url: "http://localhost:3000/api/reservas",
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(reservaData),
+          success: function(response) {
+              alert("Reserva guardada con éxito");
+          },
+          error: function(error) {
+              alert("Error al guardar la reserva");
+          }
+      });
+  });
+  
 });
   
