@@ -56,7 +56,7 @@ cursor: pointer;
     cursor: pointer;
 }
 .logout img{
-    width: 25%;
+    width: 40%;
 }
 
 
@@ -168,11 +168,11 @@ color: #333;
 }
 
 
-@media (min-width:481px) and (max-width:930px){
+@media (min-width:485px) and (max-width:930px){
     header {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         padding: 5px 10px;
         background: rgba(255, 255, 255, 0.74);
     }
@@ -181,7 +181,7 @@ color: #333;
         margin: auto;
     }
     .logout img{
-        width: 100%;
+        width: 45%;
     }
     nav ul {
         padding: 0;
@@ -204,7 +204,7 @@ color: #333;
 
 
 
-@media (max-width:480px){
+@media (max-width:484px){
     nav{
         display: none;
     }
