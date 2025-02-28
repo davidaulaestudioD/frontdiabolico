@@ -21,9 +21,19 @@ $(document).ready(function(){
         } else {
           location.reload();
         }
-      }}
-    );
-  })
+      },
+      error: function(xhr) {
+        if (xhr.responseJSON && xhr.responseJSON.error) {
+          alert( xhr.responseJSON.error);
+        } else {
+          alert("Error al iniciar sesión");
+        }
+      }
+    });
+  });
+
+  
+
   $(".image-pedidos").click(function(e){
     location.replace("pedidos.html");
   });
