@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesas - Restaurante</title>
+  <link rel="stylesheet" href="css/cssmesas.css">
+  <link rel="icon" type="image/x-icon" href="logo.svg">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-name">
+      <img src="css/img/logo.svg" alt="Logo">
+      <span>ComeCome</span>
+    </div>
+    <!-- Menú en el centro -->
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Mesas</a></li>
+        <li><a href="#">Pedidos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="logout">
+      <img src="css/img/logout.png" alt="Salir">
+    </div>
+  </header>
+  
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- Panel izquierdo: tarjetas de mesas -->
+      <div class="divMesas">
+        <div class="mesa">
+          <h3>Mesa 1</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+        <div class="mesa">
+          <h3>Mesa 2</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+        <div class="mesa">
+          <h3>Mesa 3</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+        <div class="mesa">
+          <h3>Mesa 4</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+        <div class="mesa">
+          <h3>Mesa 5</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+        <div class="mesa">
+          <h3>Mesa 6</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+        <div class="mesa">
+          <h3>Mesa 7</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+        <div class="mesa">
+          <h3>Mesa 8</h3>
+          <p>Estado: Libre</p>
+          <button class="reservar-btn">Reservar</button>
+        </div>
+      </div>
+      
+      <!-- Panel derecho: resumen y asignaciones -->
+      <div class="derecha">
+        <div class="divResumen">
+          <p>Mesas Libres: 8</p>
+          <p>Mesas Ocupadas: 0</p>
+        </div>
+        <div class="divAsignadas">
+          <!-- Se agregarán las asignaciones, por ejemplo: "Mesa 2 - Juan" -->
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal para reservar mesa -->
+  <div id="reservationModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Reservar Mesa</h2>
+      <p>Introduce el nombre para la reserva:</p>
+      <input type="text" id="reservationName" placeholder="Nombre">
+      <button id="confirmReservation">Confirmar Reserva</button>
+    </div>
+  </div>
+  
+  <script src="mesas.js"></script>
+</body>
+</html>
