@@ -20,7 +20,6 @@ $(document).ready(function(){
           location.replace("home.html");
         } else {
           location.reload();
-
         }
       },
       error: function(xhr) {
@@ -32,6 +31,20 @@ $(document).ready(function(){
       }
     });
   });
+
+
+  $(".image-pedidos").click(function(e){
+    location.replace("pedidos.html");
+  });
+
+  $(".image-mesas").click(function(e){
+    location.replace("mesas.html");
+  });
+
+  $(".logo-name").click(function(e){
+    location.replace("home.html");
+  });
+
   $(".boton-registro").click(function(e){
     e.preventDefault();
 
@@ -88,4 +101,4 @@ $(document).ready(function(){
     $('.logout').on('click',function(){
       location.replace("index.html")
     })
-})
+});
