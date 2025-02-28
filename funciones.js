@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function (){
   $(".boton-login").click(function(e){
     e.preventDefault();
     
@@ -19,18 +19,20 @@ $(document).ready(function () {
         if(response.message && response.message.indexOf("Login exitoso") !== -1){
           location.replace("home.html");
         } else {
-          location.reload();
+          location.reload(); }
+        },
+        error: function(xhr) {
+          if (xhr.responseJSON && xhr.responseJSON.error) {
+            alert( xhr.responseJSON.error);
+          } else {
+            alert("Error al iniciar sesión");
+          }
         }
-      },
-      error: function(xhr) {
-        if (xhr.responseJSON && xhr.responseJSON.error) {
-          alert( xhr.responseJSON.error);
-        } else {
-          alert("Error al iniciar sesión");
-        }
-      }
+      });
     });
-  });
+  
+  
+  
   $(".image-pedidos").click(function(e){
     location.replace("pedidos.html");
   });
@@ -41,7 +43,10 @@ $(document).ready(function () {
 
   $(".logo-name").click(function(e){
     location.replace("home.html");
-  });
+  
+
+});
+  
   $(".boton-registro").click(function (e) {
     e.preventDefault();
 
