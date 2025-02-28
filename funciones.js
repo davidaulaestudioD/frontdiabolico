@@ -32,16 +32,19 @@ $(document).ready(function(){
     });
   });
 
-  $(".registrarme").on("click", function () {
-    location.replace("registro.html");
+
+  $(".image-pedidos").click(function(e){
+    location.replace("pedidos.html");
   });
-  $(".logear").on("click", function () {
-    location.replace("index.html");
+
+  $(".image-mesas").click(function(e){
+    location.replace("mesas.html");
   });
-  $(".logout").on("click", function () {
-    location.replace("index.html");
+
+  $(".logo-name").click(function(e){
+    location.replace("home.html");
   });
-  
+
   $(".boton-registro").click(function (e) {
     e.preventDefault();
 
@@ -86,4 +89,15 @@ $(document).ready(function(){
     }
   });
 
+  $(".registrarme").on("click", function () {
+    location.replace("registro.html");
+  });
+  $(".logear").on("click", function () {
+    location.replace("index.html");
+  });
+  $(".logout").on("click", function () {
+    location.replace("index.html");
+  });
+
 });
+  
