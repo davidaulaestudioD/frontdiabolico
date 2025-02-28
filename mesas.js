@@ -154,4 +154,9 @@ $(document).ready(function() {
   $(".logo-name").click(function(){
     location.replace("home.html");
   });
+
+  $(".logout").click(function(){
+    location.replace("index.html");
+  });
+
 });
