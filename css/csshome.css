@@ -43,6 +43,7 @@ display: flex;
 align-items: center;
 gap: 8px;
 font-size: 24px;
+cursor: pointer;
 }
 
 .logo-name img {
@@ -52,6 +53,7 @@ font-size: 24px;
     display: flex;
     justify-content: end;
     width: 12%;
+    cursor: pointer;
 }
 .logout img{
     width: 25%;
@@ -138,6 +140,7 @@ color: #333;
     -webkit-text-stroke: 0.3px black;
     text-shadow: 2px 2px 4px rgba(124, 9, 9, 0.671);
     transition: filter 0.3s ease;
+    cursor: pointer;
 }
 
 
@@ -156,6 +159,7 @@ color: #333;
     -webkit-text-stroke: 0.3px black;
     text-shadow: 2px 2px 4px rgba(124, 9, 9, 0.671);
     transition: filter 0.3s ease;
+    cursor: pointer;
 }
 
 .image-pedidos:hover,

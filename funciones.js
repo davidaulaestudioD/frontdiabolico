@@ -5,8 +5,6 @@ $(document).ready(function(){
     var usuario = $("#usuario").val().trim();
     var contraseña = $("#contraseña").val().trim();
     
-    
-    // Enviamos los datos al backend usando $.ajax (método GET en este ejemplo)
     $.ajax({
       url: "http://localhost:3000/api/login",
       method: "GET", 
@@ -17,6 +15,7 @@ $(document).ready(function(){
           
 
         if(response.message && response.message.indexOf("Login exitoso") !== -1){
+          localStorage.setItem("tipo", response.user.tipo);
           location.replace("home.html");
         } else {
           location.reload();
@@ -95,9 +94,11 @@ $(document).ready(function(){
   $(".logear").on("click", function () {
     location.replace("index.html");
   });
-  $(".logout").on("click", function () {
-    location.replace("index.html");
+  
+  $(".logout").click(function(e){
+  location.replace("index.html");
   });
+
 
 });
   
