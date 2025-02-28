@@ -6,7 +6,7 @@ $(document).ready(function(){
     var contraseña = $("#contraseña").val().trim();
     
     $.ajax({
-      url: "http://localhost:3000/api/login",
+      url: "https://ejercicio-git-restaurante-back.vercel.app/api/login",
       method: "GET", 
       data: { usuario: usuario, contraseña: contraseña },
       dataType: "json",
@@ -53,7 +53,7 @@ $(document).ready(function(){
     if (usuarioNuevo) {
       if (contraseñaNueva && contraseñaNueva == contraseñaNuevaConfirmar) {
         $.ajax({
-          url: "http://localhost:3000/api/registro",
+          url: "https://ejercicio-git-restaurante-back.vercel.app/api/registro",
           type: "POST",
           contentType: "application/json",
           data: JSON.stringify({

@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   // Cargar los platos desde la API
   $.ajax({
-    url: "http://localhost:3000/api/platos",
+    url: "https://ejercicio-git-restaurante-back.vercel.app/api/platos",
     type: "GET",
     dataType: "json",
     success: function(response) {
@@ -78,7 +78,7 @@ $(document).ready(function() {
     };
     
     $.ajax({
-      url: "http://localhost:3000/api/pedidos",
+      url: "https://ejercicio-git-restaurante-back.vercel.app/api/pedidos",
       type: "POST",
       contentType: "application/json",
       data: JSON.stringify(orderData),

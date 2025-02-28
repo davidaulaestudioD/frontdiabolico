@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   // Cargar las mesas desde la API
   $.ajax({
-    url: "http://localhost:3000/api/mesas",
+    url: "https://ejercicio-git-restaurante-back.vercel.app/api/mesas",
     type: "GET",
     dataType: "json",
     success: function(response) {
@@ -79,7 +79,7 @@ $(document).ready(function() {
     
     // Enviar la reserva al backend para actualizar el estado de la mesa
     $.ajax({
-      url: "http://localhost:3000/api/mesas/reservar",
+      url: "https://ejercicio-git-restaurante-back.vercel.app/api/mesas/reservar",
       type: "PUT",
       contentType: "application/json",
       data: JSON.stringify({
@@ -113,7 +113,7 @@ $(document).ready(function() {
     
     // Enviar petición al backend para borrar la reserva
     $.ajax({
-      url: "http://localhost:3000/api/mesas/borrarReserva",
+      url: "https://ejercicio-git-restaurante-back.vercel.app/api/mesas/borrarReserva",
       type: "PUT",
       contentType: "application/json",
       data: JSON.stringify({ nombreMesa: mesaName }),

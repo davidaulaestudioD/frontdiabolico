@@ -95,7 +95,7 @@ nav ul li a:hover {
 /* ===== SECCIÓN DE MESAS ===== */
 .divMesas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
   max-width: 60%;

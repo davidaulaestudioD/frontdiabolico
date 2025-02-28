@@ -99,7 +99,7 @@ background: rgba(0, 0, 0, 0.3);
 /* ===== SECCIÓN DE PLATOS (OPCIÓN CON CSS GRID) ===== */
 .divPlatos {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+grid-template-columns: repeat(4, minmax(180px, 1fr));
 gap: 20px;
 padding: 20px;
 max-width: 60%;
