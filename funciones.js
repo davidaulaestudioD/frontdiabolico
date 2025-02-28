@@ -44,7 +44,7 @@ $(document).ready(function(){
   $(".logo-name").click(function(e){
     location.replace("home.html");
   });
-  
+
   $(".boton-registro").click(function (e) {
     e.preventDefault();
 
