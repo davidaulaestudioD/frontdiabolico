@@ -42,10 +42,10 @@ Además, los administradores tienen funcionalidades adicionales, como:
 
 ### Usuario Administrador
 - **User:** admin  
-- **Contraseña:** Abc123
+- **Contraseña:** Abc123.
 
 ### Usuario Normal
 - **User:** prueba  
-- **Contraseña:** Abc123
+- **Contraseña:** Abc123.
 
 > **Nota:** También está la opción de registrarse. Prueba a crear un usuario.
