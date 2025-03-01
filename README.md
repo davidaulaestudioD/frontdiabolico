@@ -35,8 +35,8 @@ Además, los administradores tienen funcionalidades adicionales, como:
 
 ## Links de acceso
 
-- **Front:** [https://frontdiabolico.vercel.app/](#)
-- **Back:** [https://ejercicio-git-restaurante-back.vercel.app/](#)
+- **Front:** [Link del Front](https://frontdiabolico.vercel.app/)
+- **Back:** [Link del Back](https://ejercicio-git-restaurante-back.vercel.app/)
 
 ## Usuarios para entrar
 
